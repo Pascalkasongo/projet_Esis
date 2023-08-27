@@ -1,0 +1,11 @@
+Home:
+    path : /
+    controller: App\Controller\HomeController::index
+
+Role:
+    path: /admin/ajouter_role
+    controller: App\Controller\Admin\AddRole::index
+
+Compte:
+    path : /admin/creer_compte
+    controller: App\Controller\Admin\CompteController::index
