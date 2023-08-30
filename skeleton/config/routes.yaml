@@ -6,6 +6,10 @@ Role:
     path: /admin/ajouter_role
     controller: App\Controller\Admin\AddRole::index
 
-Compte:
+CompteAdd:
     path : /admin/creer_compte
     controller: App\Controller\Admin\CompteController::index
+
+ProfAdd:
+    path: /admin/add_professeur
+    controller: App\Controller\Admin\ProfessorController::index
