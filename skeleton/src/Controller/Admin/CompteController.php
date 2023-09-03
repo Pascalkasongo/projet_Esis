@@ -22,7 +22,7 @@ class CompteController extends AbstractController{
             $em->persist($compte);
             $em->flush($compte);
 
-            echo("u'd new role");
+            echo("u'd new compte");
         }
         return $this->render('admin/role.html.twig',['form'=>$form->createView()]);
 

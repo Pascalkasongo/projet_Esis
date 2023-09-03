@@ -13,3 +13,17 @@ CompteAdd:
 ProfAdd:
     path: /admin/add_professeur
     controller: App\Controller\Admin\ProfessorController::index
+
+SalleAdd:
+    path: /admin/add_salle
+    controller: App\Controller\Admin\SalleController::index
+
+Promotion:
+    path: /admin/add_promotion
+    controller: App\Controller\Admin\PromotionController::index
+
+
+Cours:
+    path: /admin/add_cours
+    controller: App\Controller\Admin\CoursController::index
+    
