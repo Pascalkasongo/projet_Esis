@@ -26,4 +26,7 @@ Promotion:
 Cours:
     path: /admin/add_cours
     controller: App\Controller\Admin\CoursController::index
+Filiere:
+    path: /admin/add_filiere
+    controller: App\Controller\Admin\FiliereController::index
     
