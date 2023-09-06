@@ -29,4 +29,6 @@ Cours:
 Filiere:
     path: /admin/add_filiere
     controller: App\Controller\Admin\FiliereController::index
-    
+ 
+Coordination:
+    path: /admin/add

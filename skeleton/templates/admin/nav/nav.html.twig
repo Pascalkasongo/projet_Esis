@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sales Dashboard | Vuesy - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesdesign" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- plugin css -->
+    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css">
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+</head><!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Sales Dashboard | Vuesy - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesdesign" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+    {% block styleSheets %}
+        
+    
+    <!-- plugin css -->
+    <link href="{{asset('assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css" />
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="{{asset('assets/libs/swiper/swiper-bundle.min.css')}}">
+
+    <!-- Bootstrap Css -->
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+    {% endblock %}
+</head>
+
+
+<body data-layout="horizontal" data-topbar="dark">
+
+    <!-- <body data-layout="horizontal"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                <img src="assets/images/logo-sm.svg" alt="" height="26">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="assets/images/logo-sm.svg" alt="" height="26"> <span
+                                    class="logo-txt">Allocation salles</span>
+                            </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="assets/images/logo-sm.svg" alt="" height="26">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="assets/images/logo-sm.svg" alt="" height="26"> <span
+                                    class="logo-txt">Allocation salles</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item"
+                        data-bs-toggle="collapse" id="horimenu-btn" data-bs-target="#topnav-menu-content">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+
+                    <div class="topnav">
+                        <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+
+                            <div class="collapse navbar-collapse" id="topnav-menu-content">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="index.html"
+                                            id="topnav-dashboard" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class="bx bx-home-circle icon"></i>
+                                            <span data-key="t-dashboard">Tableau de bord</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                            role="button">
+                                            <i class="bx bx-customize icon"></i>
+                                            <span data-key="t-apps">Salles</span>
+                                            <div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                                            <div class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#"
+                                                    id="topnav-projects" role="button">
+                                                    <span data-key="t-projects">Gestion les salles</span>
+                                                    <div class="arrow-down"></div>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="topnav-projects">
+                                                    <a href="projects-grid.html" class="dropdown-item"
+                                                        data-key="t-p-grid">Créer une salle</a>
+                                                    <a href="projects-list.html" class="dropdown-item"
+                                                        data-key="t-p-list">Supprimer une salle</a>
+                                                    <a href="projects-overview.html" class="dropdown-item"
+                                                        data-key="t-p-overview">Modifier une salle</a>
+                                                    <a href="projects-create.html" class="dropdown-item"
+                                                        data-key="t-create-new">Lister les salles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                            role="button">
+                                            <i class="bx bx-customize icon"></i>
+                                            <span data-key="t-apps">Actions</span>
+                                            <div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                                            <div class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#"
+                                                    id="topnav-email" role="button">
+                                                    <span data-key="t-email">Gestion les rôles</span>
+                                                    <div class="arrow-down"></div>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="topnav-email">
+                                                    <a href="email-inbox.html" class="dropdown-item"
+                                                        data-key="t-inbox">Créer un rôle</a>
+                                                    <a href="email-read.html" class="dropdown-item"
+                                                        data-key="t-read-email">Supprimer un rôle</a>
+                                                    <a href="email-inbox.html" class="dropdown-item"
+                                                        data-key="t-inbox">Modifier un rôle</a>
+                                                    <a href="email-read.html" class="dropdown-item"
+                                                        data-key="t-read-email">Lister les rôles</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#"
+                                                    id="topnav-email" role="button">
+                                                    <span data-key="t-email">Gestion les étudiants</span>
+                                                    <div class="arrow-down"></div>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="topnav-email">
+                                                    <a href="email-inbox.html" class="dropdown-item"
+                                                        data-key="t-inbox">Créer un étudiant</a>
+                                                    <a href="email-read.html" class="dropdown-item"
+                                                        data-key="t-read-email">Supprimer un étudiant</a>
+                                                    <a href="email-inbox.html" class="dropdown-item"
+                                                        data-key="t-inbox">Modifier un étudiant</a>
+                                                    <a href="email-read.html" class="dropdown-item"
+                                                        data-key="t-read-email">Lister les étudiants</a>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#"
+                                                    id="topnav-ecommerce" role="button">
+                                                    <span data-key="t-ecommerce">Gestion les promotions</span>
+                                                    <div class="arrow-down"></div>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="topnav-ecommerce">
+                                                    <a href="ecommerce-products.html" class="dropdown-item"
+                                                        data-key="t-products">Créer une promotion</a>
+                                                    <a href="ecommerce-product-detail.html" class="dropdown-item"
+                                                        data-key="t-product-detail">Supprimer une promotion</a>
+                                                    <a href="ecommerce-orders.html" class="dropdown-item"
+                                                        data-key="t-orders">Modifier une promotion</a>
+                                                    <a href="ecommerce-customers.html" class="dropdown-item"
+                                                        data-key="t-customers">Lister les promotion</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#"
+                                                    id="topnav-email" role="button">
+                                                    <span data-key="t-email">Gestion les professeurs</span>
+                                                    <div class="arrow-down"></div>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="topnav-email">
+                                                    <a href="email-inbox.html" class="dropdown-item"
+                                                        data-key="t-inbox">Créer un professeur</a>
+                                                    <a href="email-read.html" class="dropdown-item"
+                                                        data-key="t-read-email">Supprimer un professeur</a>
+                                                    <a href="email-inbox.html" class="dropdown-item"
+                                                        data-key="t-inbox">Modifier un professeur</a>
+                                                    <a href="email-read.html" class="dropdown-item"
+                                                        data-key="t-read-email">Lister les professeurs</a>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#"
+                                                    id="topnav-projects" role="button">
+                                                    <span data-key="t-projects">Gestion les cours</span>
+                                                    <div class="arrow-down"></div>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="topnav-projects">
+                                                    <a href="projects-grid.html" class="dropdown-item"
+                                                        data-key="t-p-grid">Créer un cours</a>
+                                                    <a href="projects-list.html" class="dropdown-item"
+                                                        data-key="t-p-list">Supprimer un cours</a>
+                                                    <a href="projects-overview.html" class="dropdown-item"
+                                                        data-key="t-p-overview">Modifier un cours</a>
+                                                    <a href="projects-create.html" class="dropdown-item"
+                                                        data-key="t-create-new">Lister les cours</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                </div>
+
+                <div class="d-flex">
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-search icon-sm"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0">
+                            <form class="p-2">
+                                <div class="search-box">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control rounded bg-light border-0"
+                                            placeholder="Search...">
+                                        <i class="bx bx-search search-icon"></i>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block language-switch">
+                        <div class="dropdown-menu dropdown-menu-end">
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="eng">
+                                <img src="assets/images/flags/us.jpg" alt="user-image" class="me-2" height="12"> <span
+                                    class="align-middle">English</span>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
+                                <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-2" height="12">
+                                <span class="align-middle">Spanish</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr">
+                                <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-2" height="12">
+                                <span class="align-middle">German</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it">
+                                <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-2" height="12">
+                                <span class="align-middle">Italian</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
+                                <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-2" height="12">
+                                <span class="align-middle">Russian</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon" id="page-header-notifications-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-bell icon-sm"></i>
+                            <span class="noti-dot bg-danger rounded-pill">3</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h5 class="m-0 font-size-15"> Notifications </h5>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="javascript:void(0);" class="small"> Mark all as read</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 250px;">
+                                <h6 class="dropdown-header bg-light">New</h6>
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex border-bottom align-items-start">
+                                        <div class="flex-shrink-0">
+                                            <img src="assets/images/users/avatar-3.jpg"
+                                                class="me-3 rounded-circle avatar-sm" alt="user-pic">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Justin Verduzco</h6>
+                                            <div class="text-muted">
+                                                <p class="mb-1 font-size-13">Your task changed an issue from "In
+                                                    Progress" to <span
+                                                        class="badgebg-success-subtle text-success">Review</span></p>
+                                                <p class="mb-0 font-size-10 text-uppercase fw-bold"><i
+                                                        class="mdi mdi-clock-outline"></i> 1 hours ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex border-bottom align-items-start">
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar-sm me-3">
+                                                <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                    <i class="uil-shopping-basket"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">New order has been placed</h6>
+                                            <div class="text-muted">
+                                                <p class="mb-1 font-size-13">Open the order confirmation or shipment
+                                                    confirmation.</p>
+                                                <p class="mb-0 font-size-10 text-uppercase fw-bold"><i
+                                                        class="mdi mdi-clock-outline"></i> 5 hours ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <h6 class="dropdown-header bg-light">Earlier</h6>
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex border-bottom align-items-start">
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar-sm me-3">
+                                                <span
+                                                    class="avatar-title bg-success-subtle text-success rounded-circle font-size-16">
+                                                    <i class="uil-truck"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Your item is shipped</h6>
+                                            <div class="text-muted">
+                                                <p class="mb-1 font-size-13">Here is somthing that you might light like
+                                                    to know.</p>
+                                                <p class="mb-0 font-size-10 text-uppercase fw-bold"><i
+                                                        class="mdi mdi-clock-outline"></i> 1 day ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex border-bottom align-items-start">
+                                        <div class="flex-shrink-0">
+                                            <img src="assets/images/users/avatar-4.jpg"
+                                                class="me-3 rounded-circle avatar-sm" alt="user-pic">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="text-muted">
+                                                <p class="mb-1 font-size-13">Yay ! Everything worked!</p>
+                                                <p class="mb-0 font-size-10 text-uppercase fw-bold"><i
+                                                        class="mdi mdi-clock-outline"></i> 3 days ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 btn-block text-center"
+                                    href="javascript:void(0)">
+                                    <i class="uil-arrow-circle-right me-1"></i> <span>View More..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item user text-start d-flex align-items-center"
+                            id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-3.jpg"
+                                alt="Header Avatar">
+                            <span class="ms-2 d-none d-xl-inline-block user-item-desc">
+                                <span class="user-name">Marie N. <i class="mdi mdi-chevron-down"></i></span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end pt-0">
+                            <h6 class="dropdown-header">Welcome Marie N!</h6>
+                            <a class="dropdown-item" href="pages-profile.html"><i
+                                    class="mdi mdi-account-circle text-muted font-size-16 align-middle me-1"></i> <span
+                                    class="align-middle">Profile</span></a>
+                            <a class="dropdown-item" href="apps-chat.html"><i
+                                    class="mdi mdi-message-text-outline text-muted font-size-16 align-middle me-1"></i>
+                                <span class="align-middle">Messages</span></a>                          
+                            <a class="dropdown-item" href="auth_signout_cover.html"><i
+                                    class="mdi mdi-logout text-muted font-size-16 align-middle me-1"></i> <span
+                                    class="align-middle">Logout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+<!-- JAVASCRIPT -->
+
+</html>

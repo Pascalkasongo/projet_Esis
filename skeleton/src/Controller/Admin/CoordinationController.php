@@ -1,15 +1,14 @@
 <?php
-
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-
-class HomeController extends AbstractController{
+class CoordinationController extends AbstractController{
 
     public function index():Response{
-        return $this->render("admin/nav/index.html.twig");
+        return new Response();
+
+    }
     
-    } 
-} 
+}
