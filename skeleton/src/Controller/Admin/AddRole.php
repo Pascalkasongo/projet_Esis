@@ -21,9 +21,7 @@ class AddRole extends AbstractController{
         if($form->isSubmitted() && $form->isValid()){
             $em->persist($role);
             $em->flush($role);
-
-            echo("u'd new role");
         }
-        return $this->render('admin/role.html.twig',['form'=>$form->createView()]);
+        return $this->render('admin/nav/role.html.twig',['form'=>$form->createView()]);
     }
 }
