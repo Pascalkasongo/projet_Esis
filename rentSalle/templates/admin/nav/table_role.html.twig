@@ -1,0 +1,85 @@
+
+{% include 'admin/nav/nav.html.twig' %}
+
+
+    
+    <body data-layout="horizontal" data-topbar="dark">
+    <div class="hori-overlay"></div>
+    <!-- <body data-layout="horizontal"> -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-6 col-xl-6">
+                    <div class="card card-h-100">
+                        <div class="card-header justify-content-between d-flex align-items-center">
+                            <h4 class="card-title">Roles</h4>
+                        </div><!-- end card header -->
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <caption>Liste des roles</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Role</th>
+                                            <th>Action</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        {% set variable_name = 1 %}
+                                        {% for role in roles %}
+                                            
+                                        
+                                        <tr>
+                                            <th scope="row">{{variable_name}}</th>
+                                            <td>{{role.name}}</td>
+                                            <td>
+                                                <div class="d-flex flex-wrap gap-2">
+                                                    <a class="btn btn-primary" href="{{path ('role.edite',{id:role.id})}}"> Edit</a>
+                                                     <a class="btn btn-danger" href="{{path ('role.delete',{id:role.id})}}" > Delete</a>
+                                                    {# <button type="button" class="btn btn-primary"><i class="uil uil-pen"></i></button>
+                                                    <button type="button" class="btn btn-danger"><i class="uil uil-trash"></i></button> #}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                            {% set variable_name = variable_name + 1 %}
+                                        {% endfor %}
+                                        {# <tr>
+                                            <th scope="row">2</th>
+                                            <td>{{roles.name}}</td>
+                                            <td><div class="d-flex flex-wrap gap-2">
+                                                    <button type="button" class="btn btn-primary"><i class="uil uil-pen"></i></button>
+                                                    <button type="button" class="btn btn-danger"><i class="uil uil-trash"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr> #}
+                                        {# <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>
+                                                <div class="d-flex flex-wrap gap-2">
+                                                    <button type="button" class="btn btn-primary"><i class="uil uil-pen"></i></button>
+                                                    <button type="button" class="btn btn-danger"><i class="uil uil-trash"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr> #}
+                                    </tbody><!-- end tbody -->
+                                </table><!-- end table -->
+                            </div><!-- end table responsive -->
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="rightbar-overlay"></div>
+
+
+
+        {% include 'admin/nav/footer.html.twig' %}
+
+    </body>
+</html>

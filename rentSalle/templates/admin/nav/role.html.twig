@@ -1,0 +1,68 @@
+
+    {% include 'admin/nav/nav.html.twig' %}
+
+    <body data-layout="horizontal" data-topbar="dark">
+
+    <!-- <body data-layout="horizontal"> -->
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <div class="hori-overlay"></div>
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card card-h-100">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Creer role</h4>
+                                    </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div>
+                                            <form method="POST">
+                                                {{ form_start(form) }}
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="formrow-firstname-input">{{ form_label(form.name) }}</label>
+                                                
+                                                    <input type="text" class="form-control" name="{{field_name(form.name)}}" id="formrow-firstname-input" placeholder="Nom du role">
+                                                </div>
+                                              
+
+                                                <div class="mt-4">
+                                                    <button type="submit" class="btn btn-primary w-md">Creer</button>
+                                                </div>
+
+                                            {{ form_end(form) }}
+                                            </form><!-- end form -->
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                        
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+                </div><!-- End Page-content -->
+
+               
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Right Sidebar -->
+        
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+       {% include 'admin/nav/footer.html.twig' %}
+    </body>
+</html>
