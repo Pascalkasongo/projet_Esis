@@ -8,15 +8,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xxl-6 col-xl-6">
-                    <div class="card card-h-100">
-                        <div class="card-header justify-content-between d-flex align-items-center">
-                            <h4 class="card-title">Roles</h4>
-                        </div><!-- end card header -->
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table mb-0">
-                                    <caption>Liste des roles</caption>
+                   
+                        
+                        
+                            <div class="container">
+                                <table class="table">
+                                    
                                     <thead>
+                                    <br>
                                         <tr>
                                             <th>#</th>
                                             <th>Nom</th>
@@ -26,6 +25,7 @@
                                             <th>Grade</th>
                                             <th>Email</th>
                                             <th>Telephone</th>
+                                            <th>Action</th>
 
 
 
@@ -42,9 +42,9 @@
                                         
                                         <tr>
                                             <th scope="row">{{variable_name}}</th>
-                                            <td>{{professor.nom_professor}}</td>
-                                            <td>{{professor.post_nom}}</td>
-                                            <td>{{professor.prenom_professor}}</td>
+                                            <td>{{professor.nom}}</td>
+                                            <td>{{professor.postnom}}</td>
+                                            <td>{{professor.prenom}}</td>
                                             <td>{{professor.genre}}</td>
                                             <td>{{professor.grade}}</td>
                                             <td>{{professor.email}}</td>
@@ -52,14 +52,14 @@
 
                                             <td>
                                                 <div class="d-flex flex-wrap gap-2">
-                                                    <a class="btn btn-primary" href="{{path ('professor.edite',{id:professor.id})}}"> Edit</a>
+                                                    <a class="btn btn-primary" href="{{path ('edite.professor',{id:professor.id})}}"> Edit</a>
                                                      <a class="btn btn-danger" href="{{path ('professor.delete',{id:professor.id})}}" > Delete</a>
                                                     {# <button type="button" class="btn btn-primaryid"><i class="uil uil-pen"></i></button>
                                                     <button type="button" class="btn btn-danger"><i class="uil uil-trash"></i></button> #}
                                                 </div>
                                             </td>
                                         </tr>
-                                            {% set variable_name =  + 1 %}
+                                            {% set variable_name  = variable_name + 1 %}
                                         {% endfor %}
                                         
                                     </tbody><!-- end tbody -->

@@ -8,13 +8,13 @@
     <meta content="Interface utilisateur pour l'ajout d'un enseignant" name="description" />
     <meta content="Themesdesign" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="bg-white">
@@ -25,9 +25,9 @@
                     <div class="d-flex flex-column h-100 py-5 px-4">
                         <div class="text-center text-muted mb-2">
                             <div class="pb-3">
-                                <a href="index.html">
+                                <a href="{{path ('home_admin')}}">
                                     <span class="logo-lg">
-                                        <img src="assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">Allocation des salles</span>
+                                        <img src="{{asset('assets/images/logo-sm.svg')}}" alt="" height="24"> <span class="logo-txt">Allocation des salles</span>
                                     </span>
                                 </a>
                                 <p class="text-muted font-size-15 w-75 mx-auto mt-3 mb-0">Interface utilisateur pour l'ajout d'un enseignant</p>
@@ -37,7 +37,7 @@
                         <div class="my-auto">
                             <div class="p-3 text-center">
                                 <!-- Image d'illustration pour l'ajout d'un enseignant -->
-                                <img src="assets/images/auth-img.png" alt="Image d'illustration" class="img-fluid">
+                                <img src="{{asset('assets/images/auth-img.png')}}" alt="Image d'illustration" class="img-fluid">
                             </div>
                         </div>
 
@@ -60,10 +60,14 @@
                                                 <h5 class="mb-0">Ajouter un enseignant</h5>
                                                 <p class="text-muted mt-2">Veuillez remplir les informations de l'enseignant à ajouter.</p>
                                             </div>
-                                            <form class="mt-4 pt-2">
+                                            {# <form class="mt-4 pt-2"> #}
+                                            <form method="POST">
 
                                             {{ form_start(form) }}
-                                                <input type="text" class="form-control mb-3" placeholder="Nom" name="{{field_name (form.nom_professor)}}">
+
+
+                                            {{ form_rest(form) }}
+                                                {# <input type="text" class="form-control mb-3" placeholder="Nom" name="{{field_name (form.nom_professor)}}">
                                                 <input type="text" class="form-control mb-3" placeholder="Prénom" name="{{field_name (form.prenom_professor)}}">
                                                 <input type="text" class="form-control mb-3" placeholder="Post-Nom" name="{{field_name (form.post_nom)}}">
                                                 
@@ -82,11 +86,11 @@
                                                 <input type="text" class="form-control mb-3" placeholder="Téléphone" name="{{field_name (form.telephone)}}">
                                                 <input type="email" class="form-control mb-3" placeholder="E-mail" name="{{field_name (form.email)}}">
                                                 
-                                                <!-- Ajoutez d'autres champs de formulaire pour les informations de l'enseignant au besoin -->
+                                                <!-- Ajoutez d'autres champs de formulaire pour les informations de l'enseignant au besoin --> #}
 
-                                                <div class="mt-3">
-                                                    <button class="btn btn-primary w-100" type="submit">Ajouter</button>
-                                                </div>
+                                                {# <div class=" form-control mb-3">
+                                                    <button class="btn btn-primary" type="submit">Ajouter</button>
+                                                </div> #}
 
                                                 {{ form_end(form) }}
                                             </form>

@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Professor;
+use App\Entity\Professeur;
 use App\Form\ProfessorType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,46 +12,38 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProfessorController extends AbstractController{
 
-    #[Route('/admin/create_professor', name: 'professor.create')]
+    #[Route('/admin/create_professor',name:'professor.create')]
+    public function create(Request $request, EntityManagerInterface $em):Response{
 
-    public function create(Request $request,EntityManagerInterface $em):Response{
+        $professor = new Professeur();
+        $form = $this->createForm(ProfessorType::class,$professor);
 
-        $professeur = new Professor();
-        $form = $this->createForm(ProfessorType::class,$professeur);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $em->persist($professeur);
+
+            $em->persist($professor);
             $em->flush();
-            return $this->redirectToRoute('role.show');
+            return $this->redirectToRoute('professor.show');
         }
 
-        return $this->render('admin/nav/add_enseignant.html.twig',['form'=>$form]);
+        return $this->render('admin/nav/professeur.html.twig',['form'=>$form->createView()]);
+
     }
 
-    #[Route('/admin/professor_list', name: 'professor.show')]
+    #[Route('/admin/professor_list',name: 'professor.show')]
 
-    public function show(EntityManagerInterface $em):Response{
-        $professors = $em->getRepository(Professor::class)->findAll();
+    public function show(EntityManagerInterface $em ){
+        $professors = $em->getRepository(Professeur::class)->findAll();
         return $this->render('admin/nav/table_enseignant.html.twig',['professors'=>$professors]);
     }
 
-    #[Route('/admin/professor_delete/{id}', name: 'professor.delete')]
-    public function delete(EntityManagerInterface $em,$id):Response{
-        $professor = $em->getRepository(Professor::class)->find($id);
-    
-        $em->remove($professor);
-        $em->flush();
+    #[Route('/admin/edite_professor/{id}',name:'edite.professor')]
 
-        return $this->redirectToRoute('professor.show');
-    }
-
-
-    #[Route('/admin/role_edite/{id}',name:'role.edite')]
-
+   
     public function edite(Request $request,EntityManagerInterface $em,$id):Response{
        
-        $professor = $em->getRepository(Professor::class)->find($id);
+        $professor = $em->getRepository(Professeur::class)->find($id);
 
         $form = $this->createForm(ProfessorType::class, $professor);
         $form->handleRequest($request);
@@ -64,7 +56,19 @@ class ProfessorController extends AbstractController{
         
         return $this->render('admin/nav/professor.edite.html.twig',[
             'form'=>$form->createView(),
-            'role'=>$professor
+            'professors'=>$professor
             ]);
     }
+
+    #[Route('/admin/professor_delete/{id}', name: 'professor.delete')]
+
+    public function delete(EntityManagerInterface $em,$id):Response{
+        $professor = $em->getRepository(Professeur::class)->find($id);
+    
+        $em->remove($professor);
+        $em->flush();
+
+        return $this->redirectToRoute('professor.show');
+    }
+    
 }

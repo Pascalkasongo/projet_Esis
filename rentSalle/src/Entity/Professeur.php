@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ProfessorRepository;
+use App\Repository\ProfesseurRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ProfessorRepository::class)]
-class Professor
+#[ORM\Entity(repositoryClass: ProfesseurRepository::class)]
+class Professeur
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -14,24 +14,24 @@ class Professor
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $nom_professor = null;
+    private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $prenom_professor = null;
+    private ?string $postnom = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $post_nom = null;
+    private ?string $prenom = null;
 
-    #[ORM\Column(length: 10)]
+    #[ORM\Column(length: 255)]
     private ?string $genre = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 30)]
     private ?string $grade = null;
 
-    #[ORM\Column(length: 30)]
+    #[ORM\Column(length: 20)]
     private ?string $telephone = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 30)]
     private ?string $email = null;
 
     public function getId(): ?int
@@ -39,38 +39,38 @@ class Professor
         return $this->id;
     }
 
-    public function getNomProfessor(): ?string
+    public function getNom(): ?string
     {
-        return $this->nom_professor;
+        return $this->nom;
     }
 
-    public function setNomProfessor(string $nom_professor): static
+    public function setNom(string $nom): static
     {
-        $this->nom_professor = $nom_professor;
+        $this->nom = $nom;
 
         return $this;
     }
 
-    public function getPrenomProfessor(): ?string
+    public function getPostnom(): ?string
     {
-        return $this->prenom_professor;
+        return $this->postnom;
     }
 
-    public function setPrenomProfessor(string $prenom_professor): static
+    public function setPostnom(string $postnom): static
     {
-        $this->prenom_professor = $prenom_professor;
+        $this->postnom = $postnom;
 
         return $this;
     }
 
-    public function getPostNom(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->post_nom;
+        return $this->prenom;
     }
 
-    public function setPostNom(string $post_nom): static
+    public function setPrenom(string $prenom): static
     {
-        $this->post_nom = $post_nom;
+        $this->prenom = $prenom;
 
         return $this;
     }
